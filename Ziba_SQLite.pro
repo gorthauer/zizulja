@@ -31,7 +31,14 @@ FORMS    += mainwindow.ui
 
 OTHER_FILES += \
     ListOfRSSItem.qml \
-    ListOfRSSFeed.qml
+    ListOfRSSFeed.qml \
+    qtc_packaging/debian_harmattan/rules \
+    qtc_packaging/debian_harmattan/README \
+    qtc_packaging/debian_harmattan/manifest.aegis \
+    qtc_packaging/debian_harmattan/copyright \
+    qtc_packaging/debian_harmattan/control \
+    qtc_packaging/debian_harmattan/compat \
+    qtc_packaging/debian_harmattan/changelog
 
 RESOURCES += \
     iconsPack.qrc
@@ -52,3 +59,9 @@ RESOURCES += \
 
 
 
+
+
+contains(MEEGO_EDITION,harmattan) {
+    target.path = /opt/Ziba_SQLite/bin
+    INSTALLS += target
+}
